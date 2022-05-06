@@ -1,0 +1,7 @@
+librosa==0.9.1
+numpy==1.21.6
+pydub==0.25.1
+pystoi==0.3.3
+scipy==1.6.3
+SoundFile==0.10.3.post1
+torch==1.11.0

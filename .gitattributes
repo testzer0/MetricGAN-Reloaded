@@ -1,0 +1,2 @@
+data/MS-SNSD-dataset-30 filter=lfs diff=lfs merge=lfs -text
+data/MS-SNSD-dataset-30/** filter=lfs diff=lfs merge=lfs -text
