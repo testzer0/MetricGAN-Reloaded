@@ -69,6 +69,9 @@ Specifically, the existence of a win-win scenario hurt Adverserial Training. We 
 
 Thus, we conclude that Data Augmentation is an effective means to remedy such scenarios.
 
+## Future Work
+While our model can denoise audio from videos, it does not make use of visual cues in doing so. It would be pertinent to modify the Generator so as to use visual aids in denoising. We leave this for future work.
+
 ## References
 <a id="1">[1]</a> "MetricGAN: Generative Adversarial Networks based Black-box Metric Scores Optimization for Speech Enhancement", Szu-Wei Fu, Chien-Feng Liao, Yu Tsao and Shou-De Lin, ICML 2019.
 
