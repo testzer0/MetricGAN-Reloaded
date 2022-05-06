@@ -5,6 +5,13 @@ This is a pytorch implementation of MetricGAN [[1]](#1), made by my team for the
 - We support denoising of both audio (.m4a and .wav) and video (.mp4) data.
 We only use STOI [[4]](#4) using pystoi [[5]](#5), since the use of PESQ as in the paper required a license, access to which we did not have.
 
+## **Please Note**
+This repository uses `git lfs` to store everything in `data/MS-SNSD-dataset-30/` and thus all files inside that have been replaced by pointers to lfs objects. Hence, after cloning the repository, you need to run
+```
+git lfs pull
+```
+To pull the data files.
+
 ## Requirements
 To install the python-requirements, run
 ```
@@ -58,7 +65,8 @@ minutes for training the Discriminator, Generator and producing the Discriminato
 
 `Loss = MSE(2, discriminator output)`
 
-since we found that this quickened the training. For both models the Adam optimizer was used with `betas = (0.9, 0.999)`. The learning rates used were `1e-4` and `2e-5` for the Generator and Discriminator, respectively.
+since we found that this quickened the training. For both models the Adam optimizer was used with `betas = (0.9, 0.999)`. The learning rates used were `1e-4` and `2e-5` for the Generator and Discriminator, respectively. The variation of stoi with the epochs is shown below.
+<img src="assets/stoi.png" alt="Image Not Found" width="400" style="background-color:white;"/> 
 
 ## Failure Modes
 We encountered a new kind of failure mode in the initial attempts which seems to be specific to MetricGANs. Specifically, since the initial STOIs would be in the range of 0.5 to 0.7 or 0.75, the Discriminator quickly learnt to predict roughly the middle value since the MSE loss would be rather small. This in itself would mean nothing more than slow training, but then, since this correlated pretty badly with actual STOI, the generator training would hurt actual STOI. Hence, the next epoch the Discriminator again predicted the "middle" values, which were now lower than the original ones. This cycle continued, degenerating the outputs into noise.
