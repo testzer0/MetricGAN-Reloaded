@@ -51,6 +51,7 @@ The configuration of various parameters is done via `config.py`. For global para
 ## Key Idea of MetricGAN
 The key idea of MetricGAN [[1]](#1) is to use a Discriminator in a GAN not to decide fake/real, but rather to approximate a target metric such as STOI, scaled to the range [0,1]. The advantage of this approach is that by approximating a non-differentible target `T` by the discriminator `D`, we make the loss function of the generator `G` that depends on `D(G(x))` (`x` is the input), differentiable. Thus, training can proceed as normal for the generator even for a non-differentiable target metric such as STOI.
 A picture is worth a thousand words, so here is one:
+
 <img src="assets/MetricGAN.jpg" alt="Image Not Found" width="800"/> 
 
 ## Models
@@ -68,6 +69,7 @@ minutes for training the Discriminator, Generator and producing the Discriminato
 `Loss = MSE(2, discriminator output)`
 
 since we found that this quickened the training. For both models the Adam optimizer was used with `betas = (0.9, 0.999)`. The learning rates used were `1e-4` and `2e-5` for the Generator and Discriminator, respectively. The variation of stoi with the epochs is shown below.
+
 <img src="assets/stoi.png" alt="Image Not Found" width="400" style="background-color:white;"/> 
 
 ## Failure Modes
