@@ -1,6 +1,8 @@
 # MetricGAN-Reloaded
 This is a pytorch implementation of MetricGAN [[1]](#1), made by my team for the CS 753 (ASR) mini-project under Prof. [Preethi Jyothi](https://www.cse.iitb.ac.in/~pjyothi/) at IIT Bombay. While the key ideas and basic model structure is taken from [[1]](#1),
-- [[1]](#1) uses only 300 utterances with 10 types of noise from the TIMIT [[2]](#2), which was not available to us. This would only constitute only around 9000 seconds or < 3 hours of data even assuming 3 seconds for each utterance. We trained our model on **30 hours** of training data and had **1 hour** of speech as testing data, created using a slightly modified version of the Microsoft Scalable Noisy Speech Dataset (MS-SNSD) [[3]](#3) and with **128 different types of noise**.
+- [[1]](#1) uses only 300 utterances from the TIMIT [[2]](#2) with with 10 types of noise, the latter of which was not available to us. This would still only constitute only around 9000 seconds or < 3 hours of data even assuming 3 seconds for each utterance (not considering the different noise levels). 
+
+    We trained our model on **30 hours** of training data and had **1 hour** of speech as testing data, created using a slightly modified version of the Microsoft Scalable Noisy Speech Dataset (MS-SNSD) [[3]](#3) and with **128 different types of noise**.
 - We identified key failure modes of [[1]](#1) which led to unstable training and were specific to MetricGANs (v/s normal GANs) and present conclusions from and remedies to the same.
 - We support denoising of both audio (.m4a and .wav) and video (.mp4) data.
 We only use STOI [[4]](#4) using pystoi [[5]](#5), since the use of PESQ as in the paper required a license, access to which we did not have.
