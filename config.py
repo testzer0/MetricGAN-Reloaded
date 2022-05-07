@@ -14,7 +14,7 @@ MASK_MIN_VALUE = 0.05           # The minimum value to use for the mask
 TARGET = 1                      # 0-1 range of clean-ness - we did not try anything less than 1
 BATCH_SIZE = 1                  # Input audio lengths are different. Further, stoi computation
                                 # is not parallelizable in the way we currently use it.
-                                # Using a different BATCH_SIZEs is thus not feasible - 
+                                # Using a different BATCH_SIZE is thus not feasible - 
                                 # we must stick to 1.
 CHECKPT_DIR = "checkpoints/"    # The directory with checkpoints
 NUM_GAN_EPOCHS = 8              # Original paper uses 200 -- but we have use so much more data

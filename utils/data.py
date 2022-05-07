@@ -124,7 +124,7 @@ def get_discriminator_sample(file_pair):
     sample may also be clean. Irrespective, it needs to be scaled by the scale 
     factor as usual. We want to train the disciminator to give a 
     score close to 1 for clean samples and a score close to 0 for noisy ones. 
-    Whether it is found by checking whether 'SNRdb' appears in its name.
+    Whether it is dirty may be found by checking whether 'SNRdb' appears in its name.
     """
     clean_file, noisy_file = file_pair
     noisy_wav, _ = librosa.load(noisy_file, sr=16000)

@@ -2,7 +2,7 @@
 Adithya Bhaskar, 2022.
 This file contains functions that call the model functions and modify the
 output in appropriate ways (e.g. replacing audio in a video file by the cleaned
-version) before returing. Basically, all usage of the model other than training
+version) before returning it. Basically, all usage of the model other than training
 goes here.
 """
 
