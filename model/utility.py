@@ -141,7 +141,7 @@ def clean_video(generator, file_path, out_path=None):
 	 file_path, audio_path)
 	p = subprocess.Popen(command, stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT, \
      stdin=subprocess.PIPE, shell=True)
-	p.stdin.write(b'y\n')
+	p.communicate(input=b'y\n')
 	p.wait()
 	clean(generator, audio_path)
 	cleaned_path = audio_path.split(".wav")[0] + "-out.wav"
@@ -150,8 +150,8 @@ def clean_video(generator, file_path, out_path=None):
 	 file_path, cleaned_path, new_path)
 	p = subprocess.Popen(command, stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT, \
      stdin=subprocess.PIPE, shell=True)
+	p.communicate(input=b'y\n')
 	p.wait()
-	p.stdin.write(b'y\n')
 
 if __name__ == '__main__':
 		pass
