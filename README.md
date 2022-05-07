@@ -44,6 +44,8 @@ To add noise to an audio file (must be .m4a or .wav) and then also produce the d
 python main.py --full-cycle --audio <audio-file> --noise <noise-file> [--snr <snr-level>]
 ```
 The default SNR level used is 0.0.
+
+For usage examples, please look at `data/samples`. Our model is adept at de-background-noising as well, even though we did not train it on any musical noise. Such examples are in `data/samples/vdenoise{2-4}.mp4`.
 ### Note
 If your `python` defaults to Python2, replace it with `python3`.
 ## Project Structure
